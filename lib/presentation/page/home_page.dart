@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(title: Text("Anime")),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(gi
+        child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 12,
