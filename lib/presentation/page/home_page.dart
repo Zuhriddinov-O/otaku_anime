@@ -13,13 +13,18 @@ class _HomePageState extends State<HomePage> {
   late HomeViewModel _provider;
 
   @override
+  void initState() {
+    Provider.of<HomeViewModel>(context,listen: false).fetchAnimeList();
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     _provider = Provider.of<HomeViewModel>(context, listen: false);
-    if (_provider.animeList.isEmpty) {
-      _provider.fetchAnimeList();
-    }
+    // if (_provider.animeList.isEmpty) {
+    //   _provider.fetchAnimeList();
+    // }
     return Scaffold(
-      appBar: AppBar(title: Text("Anime")),
+      appBar: AppBar(title: const Text("Anime")),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: GridView.builder(
